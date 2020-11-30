@@ -8,7 +8,7 @@ router.post(
   "/",
   [
     auth,
-    check("movieId", "MovieID is required and should be a number!")
+    check("index", "Movie Index is required and should be a number!")
       .exists()
       .isNumeric(),
   ],
@@ -18,14 +18,14 @@ router.post(
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const { movieId } = req.body;
+    const { index } = req.body;
 
     try {
       await User.updateOne(
         { _id: req.user.id },
-        { $addToSet: { preferredMovies: movieId } }
+        { $addToSet: { preferredMovies: index } }
       );
-      console.log(movieId);
+      console.log(index);
       res.json({ message: "Movie added successfully" });
     } catch (err) {
       console.error(err.message);
