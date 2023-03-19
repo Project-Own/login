@@ -23,7 +23,7 @@
     "gravator": "^1.0.2",
     "jsonwebtoken": "^8.5.1",
     "moment": "^2.29.1",
-    "mongodb": "^3.6.4",
+    "mongodb": "^3.7.3",
     "mongoose": "^5.10.11",
     "react-moment": "^1.0.0",
     "react-redux": "^7.2.2",
